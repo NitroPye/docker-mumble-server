@@ -10,11 +10,5 @@ then
   exit 1
 fi
 
-echo Starting mumble-server service
-sed -i 's/^INIFILE=.*/INIFILE=\/data\/mumble-server.ini/' /etc/init.d/mumble-server
-service mumble-server start
-
-while true
-do
-  sleep 3600
-done
+chown -R mumble-server /data
+/usr/sbin/murmurd -ini /data/mumble-server.ini -fg -v
