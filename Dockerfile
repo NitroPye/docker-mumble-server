@@ -11,6 +11,8 @@ RUN chmod 755 /tmp/start.sh
 
 VOLUME ["/data"]
 
-EXPOSE 64738 6502
+EXPOSE 64738
+EXPOSE 64738/udp 
+EXPOSE 6502
 
 CMD ["/tmp/start.sh"]
